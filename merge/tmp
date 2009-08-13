@@ -1,0 +1,53 @@
+SCREEN_W = 810
+SCREEN_H = 600
+ICON_SIZE = 90
+SDL.init(SDL::INIT_VIDEO)
+SDL::TTF.init	
+$screen = SDL::Screen.open(SCREEN_W, SCREEN_H,32,SDL::SWSURFACE)
+$screen.fill_rect(630,180,180,600,[0,255,255])
+QSAMPLE = {
+  :qid => "000",
+  :question => "QWERTYUIOPLKJHGFDSAZXCVBNMQWERTYUIOPLKJHGFDSAZXCVBNM",
+  :choice => [
+              "fooooooo",
+              "baaaar",
+              "fizz"
+             ],
+  :answer => 2,
+  :point => 100
+}
+QUESTIONS = [QSAMPLE,{
+  :qid => "001",
+  :question => "This is a question 001, and answer is 2",
+  :choice => [
+              "buzz",
+              "fizzbuzz",
+              "lambda"
+             ],
+  :answer => 1,
+  :point => 100
+}]
+
+MAP = [
+       [[0,0],[0,1],[0,2],[0,3],[0,4],
+        [1,4],[2,4],[3,4],[4,4],[5,4],
+        [6,4],[6,3],[6,2],[6,1],[6,0],
+        [5,0],[4,0],[3,0],[2,0],[1,0]],
+       [[1,1],[1,2],[1,3],[2,3],[3,3],[4,3],
+        [5,3],[5,2],[5,1],[4,1],[3,1],[2,1]],
+       [[2,2],[3,2],[4,2]]
+      ]
+MAP_TILES = [
+             [1,0,0,4,0,0,7],
+             [0,3,0,0,0,0,0],
+             [4,5,6,2,6,5,4],
+             [0,0,0,0,0,0,0],
+             [7,0,0,4,0,0,7]
+            ]
+
+IMG_TILES = [
+             "./img/tile1.jpg","./img/tile2.jpg" , "./img/tile3.jpg",
+             "./img/tile1.jpg","./img/tile2.jpg" , "./img/tile3.jpg",
+             "./img/tile1.jpg","./img/tile2.jpg" , "./img/tile3.jpg"
+            ]
+IMG_CHARA =['./img/chara.bmp','./img/1.bmp']
